@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import { NETFLIX_LOGO, USER_IMG } from "../utils/constants";
+import { NETFLIX_LOGO } from "../utils/constants";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
