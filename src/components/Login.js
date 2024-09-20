@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
-import { BG_IMG } from "../utils/constants";
+import { BG_IMG, USER_IMG } from "../utils/constants";
 import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
@@ -41,7 +41,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -61,12 +60,18 @@ const Login = () => {
 
           updateProfile(user, {
             displayName: userName.current.value,
+            photoURL: USER_IMG,
           })
             .then(() => {
-              const { uid, email, displayName } = auth.currentUser;
+              const { uid, email, displayName, photoURL } = auth.currentUser;
 
               dispatch(
-                addUser({ uid: uid, email: email, displayName: displayName })
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
               );
             })
             .catch((error) => {

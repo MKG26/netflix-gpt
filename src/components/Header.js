@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
@@ -36,6 +36,8 @@ const Header = () => {
         navigate("/");
       }
     });
+
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -47,7 +49,7 @@ const Header = () => {
           <p>{user?.displayName}</p>
           <img
             className="w-12 rounded-md ml-2"
-            src={USER_IMG}
+            src={user?.photoURL}
             alt="User Image"
           />
           <button
