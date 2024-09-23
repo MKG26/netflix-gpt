@@ -6,3 +6,12 @@ export const BG_IMG =
 
 export const USER_IMG =
   "https://i.pinimg.com/564x/1b/a2/e6/1ba2e6d1d4874546c70c91f1024e17fb.jpg";
+
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YzhlNjg4ODAxYjU4OTY1NTkwMzFlMjAxZmEzMTVhMiIsIm5iZiI6MTcyNjkyMzUxNy4zODkxMDQsInN1YiI6IjY2ZWE4NTZlNTE2OGE4OTZlMTFmNDY2NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FmwW7zz0yvSb4qSBxbVLWJD0zrsVb35GyvsxC3VMn7w",
+  },
+};

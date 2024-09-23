@@ -26,8 +26,8 @@ const Header = () => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
-        const { uid, email, displayName } = user;
-        dispatch(addUser({ uid, email, displayName }));
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(addUser({ uid, email, displayName, photoURL }));
         navigate("/browse");
       } else {
         // User is signed out
@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-full pl-[150px] flex justify-between bg-gradient-to-b from-black to-transparent">
+    <div className="absolute w-full pl-[150px] flex justify-between bg-gradient-to-b from-black to-transparent z-10">
       <img className="w-52" src={NETFLIX_LOGO} alt="Netflix Logo" />
 
       {user && (
