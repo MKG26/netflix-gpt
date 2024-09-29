@@ -4,7 +4,7 @@ const MoviesCard = ({ posterPath }) => {
   if (!posterPath) return;
 
   return (
-    <div className="w-[200px] px-4 ">
+    <div className=" w-[130px] md:w-[200px] px-4 ">
       <img
         className="rounded-lg"
         src={IMG_CDN_URL + posterPath}

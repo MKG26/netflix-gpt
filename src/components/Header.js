@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import { NETFLIX_LOGO, SUPPROTED_LANGUAGES } from "../utils/constants";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/redux/userSlice";
 import { useDispatch } from "react-redux";
@@ -52,11 +52,15 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-full pl-[150px] flex justify-between bg-gradient-to-b from-black to-transparent z-10">
-      <img className="w-52" src={NETFLIX_LOGO} alt="Netflix Logo" />
+    <div className="absolute w-screen  justify-between bg-gradient-to-b from-black to-transparent z-10 flex flex-col md:flex-row">
+      <img
+        className="w-52 mx-auto md:mx-20"
+        src={NETFLIX_LOGO}
+        alt="Netflix Logo"
+      />
 
       {user && (
-        <div className="flex items-center mr-8">
+        <div className="flex items-center justify-center md:mr-8">
           {gptSearch && (
             <select
               className="p-3 bg-gray-800 text-white font-bold mr-5 rounded-md"
@@ -69,6 +73,10 @@ const Header = () => {
               ))}
             </select>
           )}
+
+          <Link to="/test">
+            <button className="bg-red-500">ToTest</button>
+          </Link>
 
           <button
             className="p-3 bg-gray-800 text-red-500 font-bold mr-5 rounded-md"
